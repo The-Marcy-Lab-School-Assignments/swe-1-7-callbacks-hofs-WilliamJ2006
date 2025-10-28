@@ -3,45 +3,50 @@ const logEachValue = (arr) => {
   if (arr.length <= 0) {
     return arr;
   }
-  for (let i = 0; i < arr.length; i++) {
-    console.log(`Value: ${arr[i]}, index: ${i}.`)
-  }
+  return arr.forEach((num, index) => console.log(`Value: ${num}, index: ${index}.`))
+  // for (let i = 0; i < arr.length; i++) {
+  //   console.log(`Value: ${arr[i]}, index: ${i}.`)
+  // }
 };
 
 const makePeopleHappy = (arr) => {
-  for (let object of arr) {
-    object.isHappy = true;
-  }
+  return arr.forEach(object => object.isHappy = true);
+  // for (let object of arr) {
+  //   object.isHappy = true;
+  // }
 };
 
 const getEvenNumbers = (arr) => {
-  const newArr = [];
-  for (let num of arr) {
-    if (num % 2 === 0) {
-      newArr.push(num);
-    }
-  }
-  return newArr;
+  // const newArr = [];
+  // for (let num of arr) {
+  //   if (num % 2 === 0) {
+  //     newArr.push(num);
+  //   }
+  // }
+  // return newArr;
+  return arr.filter(num => num % 2 === 0);
 };
 
 const doubleEveryNumber = (arr) => {
-  const double = [...arr]
-  for (let i = 0; i < double.length; i++) {
-    double[i] *= 2;
-  }
-  return double;
+  // const double = [...arr]
+  // for (let i = 0; i < double.length; i++) {
+  //   double[i] *= 2;
+  // }
+  // return double;
+  return arr.map(num => num * 2);
 };
 
 const convertToBooleans = (arr) => {
-  const newArr = []
-  for (let num of arr) {
-    if (num) {
-      newArr.push(true);
-    } else {
-      newArr.push(false);
-    }
-  }
-  return newArr;
+  // const newArr = []
+  // for (let num of arr) {
+  //   if (num) {
+  //     newArr.push(true);
+  //   } else {
+  //     newArr.push(false);
+  //   }
+  // }
+  // return newArr;
+  return arr.map(num => Boolean(num));
 };
 
 // Create your own Higher Order Functions:
@@ -49,6 +54,7 @@ const myForEach = (arr, callback) => {
   for (let i = 0; i < arr.length; i++) {
     callback(arr[i]);
   }
+
 };
 
 const myMap = (arr, transform) => {
